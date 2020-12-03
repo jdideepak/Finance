@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Company Name</th>
+        <th>Shares</th>
+        <th>Current price</th>
+        <th>Total Holding</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for item in stock_info %}
+
+        {% if item["total_shares"] > 0 %}
+
+        <tr>
+          <td>{{ item["symbol"] }}</td>
+          <td>{{ item["name"] }}</td>
+          <td>{{ item["total_shares"] }}</td>
+          <td>{{ item["current_stock_price"] }}</td>
+          <td>{{ item["holding"] }}</td>
+        </tr>
+
+        {% endif %}
+
+      {% endfor %}
+
+
+      <tr class="table-info">
+        <td>CASH</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ cash }}</td>
+      </tr>
+    </tbody>
+
+    <tfooter>
+      <tr class="bg-success">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong class="text-light">{{ sum_total }}</strong></td>
+      </tr>
+    </tfooter>
+  </table>
+
+{% endblock %}

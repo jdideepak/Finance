@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <div class="form-group">
+        <div class="form-control">{{symbol}}</div>
+        <br >
+        <br >
+        <div class="form-control">A share of <strong>{{stock_name}}</strong> costs <strong>${{stock_price}}</strong>.</div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock Symbol" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="shares" placeholder="No. of Shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+    <br>
+    <div>
+        <div><strong>Note:</strong> I am trying to make a dropdown for stock symbol but its taking time from my side<br>So here is small list of symbols</div>
+        <ul class="list-unstyled">
+            <li>AAPL for Apple</li>
+            <li>NFLX for Netflix</li>
+            <li>AMZN for Amazon</li>
+            <li>GE for General Electric</li>
+            <li>GOOGL for Google</li>
+            <li>TWTR for Twitter</li>
+            <li>For other companies please google companies name and stock symbol</li>
+        </ul>
+    </div>
+{% endblock %}
